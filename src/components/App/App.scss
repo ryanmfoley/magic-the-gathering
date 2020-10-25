@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(197, 197, 197);
+}
+
+h1 {
+	text-align: center;
+	font-size: 72px;
+	margin: 40px;
+}

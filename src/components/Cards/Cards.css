@@ -1,0 +1,12 @@
+.card-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-auto-rows: minmax(300px, auto);
+	justify-items: center;
+	/* border: 1px solid blue; */
+}
+
+img {
+	width: 250px;
+	/* border: 1px solid red; */
+}
