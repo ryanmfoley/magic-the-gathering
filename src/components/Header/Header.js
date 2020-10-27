@@ -8,10 +8,13 @@ const Header = () => {
 				<Nav.Link href='/'>Home</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link href='/cards'>Cards</Nav.Link>
+				<Nav.Link href='/cards'>Card Collection</Nav.Link>
 			</Nav.Item>
 			<Nav.Item>
-				<Nav.Link href='/hand'>Hand</Nav.Link>
+				<Nav.Link href='/decks'>Decks</Nav.Link>
+			</Nav.Item>
+			<Nav.Item>
+				<Nav.Link href='/play-game'>Play Game</Nav.Link>
 			</Nav.Item>
 		</Nav>
 	)

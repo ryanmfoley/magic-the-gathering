@@ -1,0 +1,58 @@
+.decks {
+	position: relative;
+}
+
+.decks img {
+	width: 100%;
+	height: auto;
+}
+
+.plains {
+	position: absolute;
+	left: 50%;
+	top: 27%;
+	width: 12%;
+	height: 21%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+}
+
+.island {
+	position: absolute;
+	right: 24.5%;
+	top: 43.5%;
+	width: 12%;
+	height: 21%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+}
+
+.swamp {
+	position: absolute;
+	right: 29.5%;
+	bottom: 6.5%;
+	width: 12%;
+	height: 21.5%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+}
+
+.mountain {
+	position: absolute;
+	left: 41.5%;
+	bottom: 6.5%;
+	width: 12%;
+	height: 21.5%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+}
+
+.forest {
+	position: absolute;
+	left: 36.5%;
+	top: 44%;
+	width: 12%;
+	height: 21%;
+	z-index: 1;
+	transform: translate(-50%, -50%);
+}
