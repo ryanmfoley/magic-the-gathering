@@ -10,10 +10,8 @@ const Cards = () => {
 	const [manaCost, setManaCost] = useState(1)
 
 	useEffect(() => {
-		// const url = `https://api.scryfall.com/cards/search?q=c%3A${color}+t%3a${type}+cmc%3a${manaCost}`
-		// const url = `https://api.scryfall.com/cards/search?q=c%3A${color}+t%3a${type}`
-		// const url = `https://api.scryfall.com/cards/search?q=t%3A${type}+c%3a${color}`
-		const url = `https://api.scryfall.com/cards/search?q=t%3Amountain`
+		const url = `https://api.scryfall.com/cards/search?q=c%3A${color}+t%3a${type}+cmc%3a${manaCost}`
+		// const url = `https://api.scryfall.com/cards/search?q=t%3Aisland`
 		axios.get(url).then((res) => {
 			setCards(res.data.data)
 			console.log(res.data.data)
@@ -25,8 +23,7 @@ const Cards = () => {
 
 		setColor(event.target.color.value)
 		setType(event.target.type.value)
-		// setManaCost(event.target.mana.value)
-		console.log(event.target.color.value)
+		setManaCost(event.target.mana.value)
 	}
 
 	if (!cards) {
@@ -42,7 +39,6 @@ const Cards = () => {
 					</select>
 					<select class='' id='type'>
 						<option hidden=''>Card Type</option>
-						<option>Mountain</option>
 						<option>Creature</option>
 						<option>Sorcery</option>
 						<option>Instant</option>

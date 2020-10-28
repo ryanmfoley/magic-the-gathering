@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import ManaImage from './mtg-bg.png'
+
 const Decks = () => {
 	return (
 		<div className='decks'>
-			<img
+			{/* <img
 				src='https://i.imgur.com/CwdJs7a.jpeg'
 				alt='Background image of mana symbols'
-			/>
+			/> */}
+			<img src={ManaImage} alt='Background image of mana symbols' />
 			<Link to='/decks/white-deck'>
 				<div className='plains'></div>
 			</Link>
