@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
-const Cards = () => {
-	const [cards, setCards] = useState(null)
+const RedDeck = () => {
 	const [color, setColor] = useState('red')
-	const [cardType, setCardType] = useState('creature')
+	const [type, setType] = useState('creature')
 	const [manaCost, setManaCost] = useState(1)
+	const [cards, setCards] = useState(null)
 
 	useEffect(() => {
-		const url = `https://api.scryfall.com/cards/search?q=c%3A${color}+t%3a${cardType}+cmc%3a${manaCost}`
+		const url = `https://api.scryfall.com/cards/search?q=c%3A${color}+t%3a${type}+cmc%3a${manaCost}`
 		// const url = `https://api.scryfall.com/cards/search?q=t%3Aisland`
 		axios.get(url).then((res) => {
 			setCards(res.data.data)
 			// console.log(res.data.data)
 		})
-	}, [color, cardType, manaCost])
+	}, [color, type, manaCost])
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
 
 		setColor(event.target.color.value)
-		setCardType(event.target.type.value)
+		setType(event.target.type.value)
 		setManaCost(event.target.mana.value)
 	}
 
@@ -77,4 +77,4 @@ const Cards = () => {
 	}
 }
 
-export default Cards
+export default RedDeck
