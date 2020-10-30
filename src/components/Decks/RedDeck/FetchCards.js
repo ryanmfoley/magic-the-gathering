@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import RedDeckContext from './RedDeckContext'
 
@@ -62,15 +62,15 @@ const FetchCards = () => {
 		}
 
 		addCreatureCards().then((res) => {
-			setRedDeck({ ...redDeck, creatures: res.flat() })
+			setRedDeck((cards) => ({ ...cards, creatures: res.flat() }))
 		})
 
 		addSorceryCards().then((res) => {
-			setRedDeck({ ...redDeck, sorceries: res.flat() })
+			setRedDeck((cards) => ({ ...cards, sorceries: res.flat() }))
 		})
 
 		addInstantCards().then((res) => {
-			setRedDeck({ ...redDeck, instants: res.flat() })
+			setRedDeck((cards) => ({ ...cards, instants: res.flat() }))
 		})
 	}, [])
 
