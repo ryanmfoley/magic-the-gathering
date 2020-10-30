@@ -9,44 +9,24 @@ import { bloop } from './BlahBlah'
 const BuildRedDeck = () => {
 	// const { deck, setDeck } = useContext(RedDeckContext)
 
-	// let cardTypes = ['creature', 'sorcery', 'instant']
-	// let manaCosts = [1, 2, 3, 4]
-
-	// let [cardType, setCardType] = useState([])
-	// let [manaCost, setManaCost] = useState([])
-
-	// cardTypes.forEach((type) => {
-	// 	setCardType(type)
-	// 	manaCosts.forEach((mana) => {
-	// 		setManaCost(mana)
-	// 	})
-	// })
-
-	// manaCosts.forEach((mana) => {
-	// 	setManaCost(mana)
-	// })
-
 	let [manaCost, setManaCost] = useState(1)
 
 	let [cards, setCards] = useState([])
 
-	// CreatureCards()
-	// let abc = bloop()
-	// console.log(abc)
-
-	useEffect(() => {
-		if (manaCost <= 4) {
-			// let url = `https://api.scryfall.com/cards/search?q=c%3Ar+t%3a${cardType}+cmc%3a${manaCost}`
-			let url = `https://api.scryfall.com/cards/search?q=c%3Ar+t%3acreature+cmc%3a${manaCost}`
-			fetch(url)
-				.then((res) => res.json())
-				.then((res) => {
-					setCards([...cards, res.data])
-					manaCost++
-					setManaCost(manaCost)
-				})
-		}
-	}, [manaCost])
+	// useEffect(() => {
+	// 	let resArray = []
+	// 	let url
+	// 	for (let mana = manaCost; mana <= 4; mana++) {
+	// 		url = `https://api.scryfall.com/cards/search?q=c%3Ar+t%3acreature+cmc%3a${mana}`
+	// 		fetch(url)
+	// 			.then((res) => res.json())
+	// 			.then((res) => {
+	// 				resArray.push(res.data)
+	// 			})
+	// 	}
+	// 	console.log(resArray)
+	// 	setCards([...cards, resArray])
+	// }, [])
 
 	// if (!cards) {
 	// 	return <></>

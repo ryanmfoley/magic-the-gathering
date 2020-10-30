@@ -21,14 +21,14 @@ import '../Home/Home.css'
 import './App.scss'
 
 function App() {
-	// const deck = {
-	// 	mana: null,
-	// 	creatures: {},
-	// 	sorceries: {},
-	// 	instants: {},
-	// }
+	const deck = {
+		mana: null,
+		creatures: {},
+		sorceries: {},
+		instants: {},
+	}
 
-	const [redDeck, setRedDeck] = useState([])
+	const [redDeck, setRedDeck] = useState(deck)
 	// console.log(decks)
 
 	return (
