@@ -3,21 +3,18 @@ import { Route } from 'react-router-dom'
 
 import RedDeckContext from '../Decks/RedDeck/RedDeckContext'
 
-import Cards from '../Cards/Cards'
-import '../Cards/Cards.css'
-import Decks from '../Decks/Decks'
-import '../Decks/Decks.css'
-import FetchCards from '../Decks/RedDeck/FetchCards'
-import BlackDeck from '../Decks/BlackDeck/BlackDeck'
-import BlueDeck from '../Decks/BlueDeck/BlueDeck'
-import GreenDeck from '../Decks/GreenDeck/GreenDeck'
-import BuildRedDeck from '../Decks/RedDeck/BuildRedDeck'
-import RedDeck from '../Decks/RedDeck/RedDeck'
-import WhiteDeck from '../Decks/WhiteDeck/WhiteDeck'
 import Header from '../Header/Header'
-import '../Header/Header.css'
+// import '../Header/Header.css'
 import Home from '../Home/Home'
 import '../Home/Home.css'
+import Cards from '../Cards/Cards'
+import Decks from '../Decks/Decks'
+import '../Decks/Decks.css'
+import WhiteDeck from '../Decks/WhiteDeck/WhiteDeck'
+import BlueDeck from '../Decks/BlueDeck/BlueDeck'
+import BlackDeck from '../Decks/BlackDeck/BlackDeck'
+import BuildRedDeck from '../Decks/RedDeck/BuildRedDeck'
+import GreenDeck from '../Decks/GreenDeck/GreenDeck'
 import './App.scss'
 
 function App() {
@@ -29,7 +26,6 @@ function App() {
 	}
 
 	const [redDeck, setRedDeck] = useState(deck)
-	// console.log(decks)
 
 	return (
 		<div className='App'>
@@ -44,9 +40,7 @@ function App() {
 					<Route path='/decks/white-deck' component={WhiteDeck} />
 					<Route path='/decks/blue-deck' component={BlueDeck} />
 					<Route path='/decks/black-deck' component={BlackDeck} />
-					{/* <Route path='/decks/red-deck' component={RedDeck} /> */}
-					{/* testing build red deck */}
-					<Route path='/decks/red-deck' component={FetchCards} />
+					<Route path='/decks/red-deck' component={BuildRedDeck} />
 					<Route path='/decks/green-deck' component={GreenDeck} />
 				</main>
 			</RedDeckContext.Provider>

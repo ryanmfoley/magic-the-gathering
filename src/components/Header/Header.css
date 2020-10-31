@@ -1,3 +1,12 @@
 header {
 	background-color: white;
 }
+
+.mtg-brand {
+	width: 50px;
+	height: auto;
+}
+
+.navbar {
+	font-size: 1.5em !important;
+}

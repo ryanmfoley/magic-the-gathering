@@ -1,22 +1,26 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+
+import MtgBrand from './mtg-brand.png'
+import './Header.css'
 
 const Header = () => {
 	return (
-		<Nav variant='pills'>
-			<Nav.Item>
-				<Nav.Link href='/'>Home</Nav.Link>
-			</Nav.Item>
-			<Nav.Item>
+		<Navbar bg='dark' variant='dark' fixed='top'>
+			<Navbar.Brand href='/'>
+				<img
+					className='mtg-brand'
+					src={MtgBrand}
+					alt='Magic The Gathering logo'
+				/>
+			</Navbar.Brand>
+			<Nav className='mr-auto'>
 				<Nav.Link href='/cards'>Card Collection</Nav.Link>
-			</Nav.Item>
-			<Nav.Item>
 				<Nav.Link href='/decks'>Decks</Nav.Link>
-			</Nav.Item>
-			<Nav.Item>
-				<Nav.Link href='/play-game'>Play Game</Nav.Link>
-			</Nav.Item>
-		</Nav>
+				<Nav.Link href='play-game'>Play Game</Nav.Link>
+			</Nav>
+		</Navbar>
 	)
 }
 

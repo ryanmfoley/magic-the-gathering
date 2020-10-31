@@ -4,8 +4,15 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
-	background-color: rgb(197, 197, 197);
+	// background-color: rgb(197, 197, 197);
+	background-color: white;
+	// background-color: #292b2c;
+	padding-top: 75px;
 }
 
 h1 {
