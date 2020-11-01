@@ -7,17 +7,19 @@ import Paginate from './Paginate'
 import './Library.css'
 
 const Library = () => {
+	// ADD CARDS PER PAGE
+	// ADD CARDS PER PAGE
+	// ADD CARDS PER PAGE
+	// ADD CARDS PER PAGE
+	// ADD CARDS PER PAGE
+
 	// Initialize hooks for API endpoint parameters
-	const [color, setColor] = useState('blue')
-	const [cardType, setCardType] = useState('creature')
-	const [manaCost, setManaCost] = useState(3)
-	// const [manaCost, setManaCost] = useState(null)
+	const [color, setColor] = useState('')
+	const [cardType, setCardType] = useState('')
+	const [manaCost, setManaCost] = useState(null)
 
 	// Initialize hook for array of cards
 	const [cards, setCards] = useState([])
-
-	// Initialize hook for loading
-	const [loading, setLoading] = useState(false)
 
 	// Initialize hooks for pagination
 	const [currentPage, setCurrentPage] = useState(1)
@@ -31,11 +33,8 @@ const Library = () => {
 		// 	setCardList(res.data.data)
 		// })
 		const fetchCards = async () => {
-			setLoading(true)
 			const res = await axios.get(url)
 			setCards(res.data.data)
-			// console.log(res.data.data)
-			setLoading(false)
 		}
 
 		fetchCards()
@@ -47,6 +46,7 @@ const Library = () => {
 		setColor(event.target.color.value)
 		setCardType(event.target.type.value)
 		setManaCost(event.target.mana.value)
+		setCurrentPage(1)
 	}
 
 	// Get current cards
@@ -75,6 +75,8 @@ const Library = () => {
 					<option>Creature</option>
 					<option>Sorcery</option>
 					<option>Instant</option>
+					<option>Enchantment</option>
+					<option>Artifact</option>
 				</select>
 				<select class='' id='mana'>
 					<option hidden=''>Converted Mana Cost</option>
@@ -98,10 +100,18 @@ const Library = () => {
 				currentPage={currentPage}
 				paginate={paginate}
 			/>
-			<CardList cards={currentCards} loading={loading} />
+			<CardList cards={currentCards} color={color} />
 		</div>
 	)
 	// }
 }
 
 export default Library
+// const [show, setShow] = useState(false)
+
+// const handleClose = () => setShow(false)
+// const handleShow = () => setShow(true)
+
+// return (
+
+// )

@@ -4,7 +4,7 @@
 	width: 100%;
 	top: 75px;
 	position: fixed;
-	z-index: 1;
+	z-index: 2;
 }
 
 .card-list {
@@ -13,9 +13,7 @@
 	grid-auto-rows: minmax(300px, auto);
 	grid-row-gap: 10px;
 	justify-items: center;
-	/* margin: 0 20px; */
 	margin-top: 100px;
-	/* border: 1px solid blue; */
 }
 
 img {
@@ -33,13 +31,26 @@ img {
 nav {
 	/* padding-right: 40px; */
 }
-
+/* .pagination:active, */
 .pagination {
 	justify-content: flex-end;
 	margin-top: 100px;
 	padding-right: 40px;
+}
+.active .page-link {
+	z-index: 1 !important;
+}
 
-	/* margin-left: 1vw; */
+.page-link:hover {
+	z-index: 1 !important;
+}
+
+.modal {
+	background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.modal-content {
+	background-color: rgb(170, 170, 170) !important;
 }
 
 /* .pagination {
