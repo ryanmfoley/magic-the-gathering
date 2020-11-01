@@ -13,7 +13,8 @@
 	grid-auto-rows: minmax(300px, auto);
 	grid-row-gap: 10px;
 	justify-items: center;
-	margin: 0 20px;
+	/* margin: 0 20px; */
+	margin-top: 100px;
 	/* border: 1px solid blue; */
 }
 
@@ -29,7 +30,19 @@ img {
 	background-color: #134e13 !important;
 }
 
+nav {
+	/* padding-right: 40px; */
+}
+
 .pagination {
+	justify-content: flex-end;
+	margin-top: 100px;
+	padding-right: 40px;
+
+	/* margin-left: 1vw; */
+}
+
+/* .pagination {
 	width: 100vw;
 	display: flex;
 	justify-content: flex-end;
@@ -37,4 +50,4 @@ img {
 	padding-bottom: 20px;
 	padding-right: 40px;
 	z-index: 0;
-}
+} */

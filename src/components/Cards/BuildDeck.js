@@ -2,14 +2,15 @@
 
 // import Library from './Library'
 // import CardList from './CardList'
+// import './BuildDeck.css'
 
-// const Cards = () => {
+// const BuildDeck = () => {
 // 	return (
-// 		<div>
+// 		<div className='build-deck'>
 // 			<Library />
 // 			<CardList />
 // 		</div>
 // 	)
 // }
 
-// export default Cards
+// export default BuildDeck

@@ -16,9 +16,9 @@ const Header = () => {
 				/>
 			</Navbar.Brand>
 			<Nav className='mr-auto'>
-				<Nav.Link href='/cards'>Card Collection</Nav.Link>
+				<Nav.Link href='/library'>Card Database</Nav.Link>
+				<Nav.Link href='/library/build-deck'>Build Deck</Nav.Link>
 				<Nav.Link href='/decks'>Decks</Nav.Link>
-				<Nav.Link href='play-game'>Play Game</Nav.Link>
 			</Nav>
 		</Navbar>
 	)

@@ -7,9 +7,8 @@ import Header from '../Header/Header'
 // import '../Header/Header.css'
 import Home from '../Home/Home'
 import '../Home/Home.css'
-import Cards from '../Cards/Cards'
+import Library from '../Cards/Library'
 import Decks from '../Decks/Decks'
-import '../Decks/Decks.css'
 import WhiteDeck from '../Decks/WhiteDeck/WhiteDeck'
 import BlueDeck from '../Decks/BlueDeck/BlueDeck'
 import BlackDeck from '../Decks/BlackDeck/BlackDeck'
@@ -18,6 +17,11 @@ import GreenDeck from '../Decks/GreenDeck/GreenDeck'
 import './App.scss'
 
 function App() {
+	// NOTES
+	// Card database that allows user to click on card to maximize view
+	// BuildDeck, built deck overwrites deck gallery for that color, save button
+	// DeckGallery, carousel to view cards
+
 	const deck = {
 		mana: null,
 		creatures: {},
@@ -35,7 +39,8 @@ function App() {
 				</header>
 				<main>
 					<Route exact path='/' component={Home} />
-					<Route path='/cards' component={Cards} />
+					{/* <Route exact path='/cards' component={Cards} /> */}
+					<Route path='/library/' component={Library} />
 					<Route path='/decks' component={Decks} />
 					<Route path='/decks/white-deck' component={WhiteDeck} />
 					<Route path='/decks/blue-deck' component={BlueDeck} />

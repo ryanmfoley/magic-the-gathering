@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import '../Decks/Decks.css'
 import ManaImage from './mtg-bg.png'
 
 const Decks = () => {
