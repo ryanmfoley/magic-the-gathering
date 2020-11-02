@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
 
 import SelectedCardContext from '../Cards/SelectedCardContext'
+import DeckInProgressContext from '../Cards/DeckInProgressContext'
 import WhiteDeckContext from '../Decks/WhiteDeck/WhiteDeckContext'
 import BlueDeckContext from '../Decks/BlueDeck/BlueDeckContext'
 import BlackDeckContext from '../Decks/BlackDeck/BlackDeckContext'
@@ -34,6 +35,8 @@ function App() {
 	}
 
 	const [selectedCard, setSelectedCard] = useState(null)
+	const [deckInProgress, setDeckInProgress] = useState([])
+	// const [deckInProgress, setDeckInProgress] = useState([])
 	const [whiteDeck, setWhiteDeck] = useState(deck)
 	const [blueDeck, setBlueDeck] = useState(deck)
 	const [blackDeck, setBlackDeck] = useState(deck)
@@ -47,23 +50,26 @@ function App() {
 					<BlackDeckContext.Provider value={{ blackDeck, setBlackDeck }}>
 						<RedDeckContext.Provider value={{ redDeck, setRedDeck }}>
 							<GreenDeckContext.Provider value={{ greenDeck, setGreenDeck }}>
-								<SelectedCardContext.Provider
-									value={{ selectedCard, setSelectedCard }}>
-									<header>
-										<Header />
-									</header>
-									<main>
-										<Route exact path='/' component={Home} />
-										{/* <Route exact path='/cards' component={Cards} /> */}
-										<Route path='/library/' component={Library} />
-										<Route path='/decks' component={Decks} />
-										<Route path='/decks/white-deck' component={WhiteDeck} />
-										<Route path='/decks/blue-deck' component={BlueDeck} />
-										<Route path='/decks/black-deck' component={BlackDeck} />
-										<Route path='/decks/red-deck' component={BuildRedDeck} />
-										<Route path='/decks/green-deck' component={GreenDeck} />
-									</main>
-								</SelectedCardContext.Provider>
+								<DeckInProgressContext.Provider
+									value={{ deckInProgress, setDeckInProgress }}>
+									<SelectedCardContext.Provider
+										value={{ selectedCard, setSelectedCard }}>
+										<header>
+											<Header />
+										</header>
+										<main>
+											<Route exact path='/' component={Home} />
+											{/* <Route exact path='/cards' component={Cards} /> */}
+											<Route path='/library/' component={Library} />
+											<Route path='/decks' component={Decks} />
+											<Route path='/decks/white-deck' component={WhiteDeck} />
+											<Route path='/decks/blue-deck' component={BlueDeck} />
+											<Route path='/decks/black-deck' component={BlackDeck} />
+											<Route path='/decks/red-deck' component={BuildRedDeck} />
+											<Route path='/decks/green-deck' component={GreenDeck} />
+										</main>
+									</SelectedCardContext.Provider>
+								</DeckInProgressContext.Provider>
 							</GreenDeckContext.Provider>
 						</RedDeckContext.Provider>
 					</BlackDeckContext.Provider>

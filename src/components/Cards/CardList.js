@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 
-import DeckInProgress from './DeckInProgress'
+import DeckInProgressContext from './DeckInProgressContext'
 
 const CardList = ({ cards, color, type }) => {
 	// <Modal wouldn't run because can't read property of null when it's looking at selectedCard.name, so I initially set it to {}, which is undefined at first
@@ -10,37 +10,27 @@ const CardList = ({ cards, color, type }) => {
 	const [show, setShow] = useState(false)
 	const [selectedCard, setSelectedCard] = useState({})
 
-	const [cardsForDeck, setCardsForDeck] = useState([])
+	const { deckInProgress, setDeckInProgress } = useContext(
+		DeckInProgressContext
+	)
 
 	const handleShow = (event) => {
 		setShow(true)
 		setSelectedCard(event.target.dataset)
-		console.log(event.target.dataset.color)
-		// Change color symbol to word
-		switch (selectedCard.color) {
-			case '{W}':
-				setSelectedCard({ ...selectedCard, color: 'white' })
-				break
-			case '{U}':
-				setSelectedCard({ ...selectedCard, color: 'blue' })
-				break
-			case '{B}':
-				setSelectedCard({ ...selectedCard, color: 'black' })
-				break
-			case '{R}':
-				setSelectedCard({ ...selectedCard, color: 'red' })
-				break
-			case '{G}':
-				setSelectedCard({ ...selectedCard, color: 'green' })
-				break
-		}
 	}
 
 	const handleClose = () => setShow(false)
 
 	const handleSave = () => {
-		if (cardsForDeck.length < 20) {
-			setCardsForDeck([...cardsForDeck, selectedCard])
+		if (!deckInProgress.length) {
+			setDeckInProgress([...deckInProgress, selectedCard])
+			setSelectedCard([])
+		} else if (
+			deckInProgress.length > 0 &&
+			deckInProgress.length <= 20 &&
+			!deckInProgress.includes(selectedCard)
+		) {
+			setDeckInProgress([...deckInProgress, selectedCard])
 			setSelectedCard([])
 		}
 		handleClose()
@@ -51,7 +41,7 @@ const CardList = ({ cards, color, type }) => {
 	} else {
 		return (
 			<div>
-				<DeckInProgress cards={cardsForDeck} />
+				{/* <DeckInProgress cards={cardsForDeck} /> */}
 				<div className='card-list'>
 					{cards.map((card) => {
 						if (card.image_uris) {

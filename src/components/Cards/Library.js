@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
+import DeckInProgress from './DeckInProgress'
 import CardList from './CardList'
 import Paginate from './Paginate'
 import './Library.css'
@@ -94,6 +95,7 @@ const Library = () => {
 					Search Cards
 				</Button>
 			</form>
+			<DeckInProgress />
 			<Paginate
 				cardsPerPage={cardsPerPage}
 				totalCards={cards.length}
