@@ -1,0 +1,27 @@
+.white {
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.blue {
+	width: 20px;
+	height: 20px;
+	background-color: lightblue;
+}
+.black {
+	width: 20px;
+	height: 20px;
+	background-color: black;
+}
+.red {
+	width: 20px;
+	height: 20px;
+	background-color: red;
+}
+.green {
+	width: 20px;
+	height: 20px;
+	background-color: green;
+}

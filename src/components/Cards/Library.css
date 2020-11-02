@@ -25,7 +25,8 @@ img {
 .btn-primary:active,
 .btn-primary:visited { */
 .btn-primary {
-	background-color: #134e13 !important;
+	/* background-color: #134e13 !important; */
+	background-color: #1a6e97 !important;
 }
 
 nav {
@@ -39,10 +40,23 @@ nav {
 }
 .active .page-link {
 	z-index: 1 !important;
+	background-color: #1a6e97 !important;
 }
 
 .page-link:hover {
 	z-index: 1 !important;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+	border-color: red !important;
+	/* border-color: #97441a !important; */
+}
+
+.pagination > li > a {
+	color: #1a6e97 !important;
 }
 
 .modal {
@@ -52,13 +66,3 @@ nav {
 .modal-content {
 	background-color: rgb(170, 170, 170) !important;
 }
-
-/* .pagination {
-	width: 100vw;
-	display: flex;
-	justify-content: flex-end;
-	padding-top: 60px;
-	padding-bottom: 20px;
-	padding-right: 40px;
-	z-index: 0;
-} */

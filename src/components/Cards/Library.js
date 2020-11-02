@@ -100,7 +100,7 @@ const Library = () => {
 				currentPage={currentPage}
 				paginate={paginate}
 			/>
-			<CardList cards={currentCards} color={color} />
+			<CardList cards={currentCards} color={color} type={cardType} />
 		</div>
 	)
 	// }
