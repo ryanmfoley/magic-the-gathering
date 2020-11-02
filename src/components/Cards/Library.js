@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
 import axios from 'axios'
 
 import DeckInProgress from './DeckInProgress'
@@ -8,6 +9,8 @@ import Paginate from './Paginate'
 import './Library.css'
 
 const Library = () => {
+	const [showModal, setShowModal] = useState(true)
+
 	// Initialize hooks for API endpoint parameters
 	const [color, setColor] = useState('')
 	const [cardType, setCardType] = useState('')
@@ -35,6 +38,8 @@ const Library = () => {
 
 		fetchCards()
 	}, [color, cardType, manaCost])
+
+	const handleClose = () => setShowModal(false)
 
 	const handleSubmit = (event) => {
 		event.preventDefault()
@@ -99,6 +104,36 @@ const Library = () => {
 				paginate={paginate}
 			/>
 			<CardList cards={currentCards} color={color} type={cardType} />
+			<Modal show={showModal} onHide={handleClose} closeButton>
+				<Modal.Header closeButton>
+					<Modal.Title>Build your own decks</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>
+					<ol>
+						<li>
+							Click on card to be added to your deck then click "Add Card".
+						</li>
+						<li>When you're finished adding your cards, click "Save Deck"</li>
+						<li>
+							Enter the name of your deck in the prompt followed by clicking
+							"Save"
+						</li>
+						<li>
+							Your deck will be saved locally and ready to be viewd in the "Deck
+							Gallery"
+						</li>
+					</ol>
+				</Modal.Body>
+				<Modal.Footer>
+					<Button
+						className='btn-primary'
+						variant='primary'
+						size='sm'
+						onClick={handleClose}>
+						Close
+					</Button>
+				</Modal.Footer>
+			</Modal>
 		</div>
 	)
 }
