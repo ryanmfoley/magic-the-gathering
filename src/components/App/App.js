@@ -27,6 +27,8 @@ function App() {
 	// BuildDeck, built deck overwrites deck gallery for that color, save button
 	// DeckGallery, carousel to view cards
 
+	// FIX CARDFILTER WHEN WINDOW IS SMALL
+
 	const deck = {
 		mana: null,
 		creatures: {},

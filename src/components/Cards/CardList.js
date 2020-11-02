@@ -14,52 +14,51 @@ const CardList = ({ cards, type }) => {
 
 	const handleShow = (event) => {
 		setShow(true)
-		setSelectedCard(event.target.dataset)
+		// let cardObj = { ...event.target.dataset }
+		setSelectedCard({ ...event.target.dataset })
+		// setSelectedCard({ ...cardObj })
 	}
 
 	const handleClose = () => setShow(false)
 
-	const handleSave = () => {
+	const handleSave = (event) => {
+		event.preventDefault()
+		let cardObj = { ...selectedCard, copies: event.target.copies.value }
+
 		if (!deckInProgress.length) {
-			setDeckInProgress([...deckInProgress, selectedCard])
+			setDeckInProgress([...deckInProgress, cardObj])
 			setSelectedCard([])
 		} else if (
 			deckInProgress.length > 0 &&
 			deckInProgress.length <= 20 &&
-			!deckInProgress.includes(selectedCard)
+			!deckInProgress.includes(cardObj)
 		) {
-			setDeckInProgress([...deckInProgress, selectedCard])
+			setDeckInProgress([...deckInProgress, cardObj])
 			setSelectedCard([])
 		}
 		handleClose()
 	}
-	cards.forEach((card) => console.log(card.mana_cost))
 	if (!cards) {
 		return <h2>Loading...</h2>
 	} else {
 		return (
 			<div>
-				{/* <DeckInProgress cards={cardsForDeck} /> */}
 				<div className='card-list'>
-					{cards.map((card) => {
-						if (card.image_uris) {
-							return (
-								<img
-									key={card.id}
-									src={card.image_uris.normal}
-									alt='Magic The Gathering Card'
-									role='button'
-									data-id={card.id}
-									data-color={card.mana_cost}
-									data-name={card.name}
-									data-type={card.type_line}
-									data-mana={card.cmc}
-									data-image={card.image_uris.png}
-									onClick={handleShow}
-								/>
-							)
-						}
-					})}
+					{cards.map((card) => (
+						<img
+							key={card.id}
+							src={card.image_uris.normal}
+							alt='Magic The Gathering Card'
+							role='button'
+							data-id={card.id}
+							data-color={card.mana_cost}
+							data-name={card.name}
+							data-type={card.type_line}
+							data-mana={card.cmc}
+							data-image={card.image_uris.png}
+							onClick={handleShow}
+						/>
+					))}
 				</div>
 				<Modal show={show} onHide={handleClose} size='sm' closeButton>
 					<Modal.Header closeButton>
@@ -69,45 +68,30 @@ const CardList = ({ cards, type }) => {
 						<img src={selectedCard.image} alt='Magic The Gathering Card' />
 					</Modal.Body>
 					<Modal.Footer>
-						<label htmlFor='cards'>Number of copies</label>
-						<select name='cards'>
-							<option value='1'>1</option>
-							<option value='2'>2</option>
-							<option value='3'>3</option>
-							<option value='4'>4</option>
-						</select>
-						<Button variant='primary' type='button' onClick={handleSave}>
-							Add card
-						</Button>
-						<Button variant='secondary' type='button' onClick={handleClose}>
-							Close
-						</Button>
+						<form onSubmit={handleSave}>
+							<label htmlFor='cards'>Copies:</label>
+							<select name='cards' id='copies'>
+								<option value='1'>1</option>
+								<option value='2'>2</option>
+								<option value='3'>3</option>
+								<option value='4'>4</option>
+							</select>
+							<Button
+								type='button'
+								variant='secondary'
+								onClick={handleClose}
+								size='sm'>
+								Close
+							</Button>
+							<Button type='submit' variant='primary' size='sm'>
+								Add card
+							</Button>
+						</form>
 					</Modal.Footer>
 				</Modal>
 			</div>
 		)
 	}
 }
-// switch (color) {
-// 	case 'White':
-// 		setWhiteDeck([...whiteDeck, selectedCard.id])
-// 		setSelectedCard({})
-// 		break
-// 	case 'Blue':
-// 		setBlueDeck(selectedCard)
-// 		setSelectedCard({})
-// 		break
-// 	case 'Black':
-// 		setBlackDeck(selectedCard)
-// 		setSelectedCard({})
-// 		break
-// 	case 'Red':
-// 		setRedDeck(selectedCard)
-// 		setSelectedCard({})
-// 		break
-// 	case 'Green':
-// 		setGreenDeck(selectedCard)
-// 		setSelectedCard({})
-// 		break
-// }
+
 export default CardList

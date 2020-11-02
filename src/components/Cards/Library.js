@@ -8,12 +8,6 @@ import Paginate from './Paginate'
 import './Library.css'
 
 const Library = () => {
-	// ADD CARDS PER PAGE
-	// ADD CARDS PER PAGE
-	// ADD CARDS PER PAGE
-	// ADD CARDS PER PAGE
-	// ADD CARDS PER PAGE
-
 	// Initialize hooks for API endpoint parameters
 	const [color, setColor] = useState('')
 	const [cardType, setCardType] = useState('')
@@ -28,14 +22,15 @@ const Library = () => {
 
 	// Fetch cards using the API endpoint parameters user sets in form
 	useEffect(() => {
-		const url = `https://api.scryfall.com/cards/search?q=c%3A${color}+t%3a${cardType}+cmc%3a${manaCost}`
-		// const url = `https://api.scryfall.com/cards/search?q=t%3Aisland`
-		// axios.get(url).then((res) => {
-		// 	setCardList(res.data.data)
-		// })
 		const fetchCards = async () => {
-			const res = await axios.get(url)
-			setCards(res.data.data)
+			// Wait for value on url parameters before fetching cards
+			if (color && cardType && manaCost) {
+				const res = await axios.get(
+					`https://api.scryfall.com/cards/search?q=c%3A${color}+t%3a${cardType}+cmc%3a${manaCost}`
+				)
+
+				setCards(res.data.data)
+			}
 		}
 
 		fetchCards()
@@ -61,7 +56,7 @@ const Library = () => {
 	return (
 		<div className='library'>
 			<form className='card-filter' onSubmit={handleSubmit}>
-				<select class='' id='color'>
+				<select id='color'>
 					<option className='text-center' hidden=''>
 						Color
 					</option>
@@ -108,15 +103,6 @@ const Library = () => {
 			<CardList cards={currentCards} color={color} type={cardType} />
 		</div>
 	)
-	// }
 }
 
 export default Library
-// const [show, setShow] = useState(false)
-
-// const handleClose = () => setShow(false)
-// const handleShow = () => setShow(true)
-
-// return (
-
-// )

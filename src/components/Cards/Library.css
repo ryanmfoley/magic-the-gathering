@@ -54,10 +54,6 @@ img {
 	background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.modal-content {
-	background-color: rgb(216, 216, 216) !important;
-}
-
 .modal-body > img {
 	justify-content: flex-end !important;
 	/* text-align: center !important; */
