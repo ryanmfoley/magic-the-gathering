@@ -11,7 +11,7 @@ import DeckGallery from '../Decks/DeckGallery'
 import WhiteDeck from '../Decks/WhiteDeck/WhiteDeck'
 import BlueDeck from '../Decks/BlueDeck/BlueDeck'
 import BlackDeck from '../Decks/BlackDeck/BlackDeck'
-import BuildRedDeck from '../Decks/RedDeck/BuildRedDeck'
+import RedDeck from '../Decks/RedDeck/RedDeck'
 import GreenDeck from '../Decks/GreenDeck/GreenDeck'
 import './App.scss'
 
@@ -40,7 +40,7 @@ function App() {
 					<Route path='/decks/white-deck' component={WhiteDeck} />
 					<Route path='/decks/blue-deck' component={BlueDeck} />
 					<Route path='/decks/black-deck' component={BlackDeck} />
-					<Route path='/decks/red-deck' component={BuildRedDeck} />
+					<Route path='/decks/red-deck' component={RedDeck} />
 					<Route path='/decks/green-deck' component={GreenDeck} />
 				</main>
 			</DeckInProgressContext.Provider>
