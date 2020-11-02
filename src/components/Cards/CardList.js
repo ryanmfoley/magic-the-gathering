@@ -38,14 +38,14 @@ const CardList = ({ cards, type }) => {
 		}
 		handleClose()
 	}
-	if (!cards) {
-		return <h2>Loading...</h2>
+	if (!cards.length) {
+		return <></>
 	} else {
 		return (
 			<div>
 				<div className='card-list'>
 					{cards.map((card) => {
-						if (card.image_uris.normal) {
+						if (card.image_uris) {
 							return (
 								<img
 									key={card.id}
