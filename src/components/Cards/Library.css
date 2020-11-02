@@ -58,3 +58,7 @@ img {
 	justify-content: flex-end !important;
 	/* text-align: center !important; */
 }
+
+.modal-footer {
+	justify-content: space-around !important;
+}

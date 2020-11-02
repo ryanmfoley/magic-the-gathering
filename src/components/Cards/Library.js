@@ -57,16 +57,14 @@ const Library = () => {
 		<div className='library'>
 			<form className='card-filter' onSubmit={handleSubmit}>
 				<select id='color'>
-					<option className='text-center' hidden=''>
-						Color
-					</option>
+					<option hidden=''>Color</option>
 					<option>White</option>
 					<option>Blue</option>
 					<option>Black</option>
 					<option>Red</option>
 					<option>Green</option>
 				</select>
-				<select class='' id='type'>
+				<select id='type'>
 					<option hidden=''>Card Type</option>
 					<option>Creature</option>
 					<option>Sorcery</option>
@@ -74,7 +72,7 @@ const Library = () => {
 					<option>Enchantment</option>
 					<option>Artifact</option>
 				</select>
-				<select class='' id='mana'>
+				<select id='mana'>
 					<option hidden=''>Converted Mana Cost</option>
 					<option>1</option>
 					<option>2</option>

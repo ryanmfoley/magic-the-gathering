@@ -44,21 +44,27 @@ const CardList = ({ cards, type }) => {
 		return (
 			<div>
 				<div className='card-list'>
-					{cards.map((card) => (
-						<img
-							key={card.id}
-							src={card.image_uris.normal}
-							alt='Magic The Gathering Card'
-							role='button'
-							data-id={card.id}
-							data-color={card.mana_cost}
-							data-name={card.name}
-							data-type={card.type_line}
-							data-mana={card.cmc}
-							data-image={card.image_uris.png}
-							onClick={handleShow}
-						/>
-					))}
+					{cards.map((card) => {
+						if (card.image_uris.normal) {
+							return (
+								<img
+									key={card.id}
+									src={card.image_uris.normal}
+									alt='Magic The Gathering Card'
+									role='button'
+									data-id={card.id}
+									data-color={card.mana_cost}
+									data-name={card.name}
+									data-type={card.type_line}
+									data-mana={card.cmc}
+									data-image={card.image_uris.png}
+									onClick={handleShow}
+								/>
+							)
+						} else {
+							return <></>
+						}
+					})}
 				</div>
 				<Modal show={show} onHide={handleClose} size='sm' closeButton>
 					<Modal.Header closeButton>

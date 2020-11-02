@@ -14,6 +14,7 @@ import Home from '../Home/Home'
 import '../Home/Home.css'
 import Library from '../Cards/Library'
 import Decks from '../Decks/Decks'
+import DeckGallery from '../Decks/DeckGallery'
 import WhiteDeck from '../Decks/WhiteDeck/WhiteDeck'
 import BlueDeck from '../Decks/BlueDeck/BlueDeck'
 import BlackDeck from '../Decks/BlackDeck/BlackDeck'
@@ -61,8 +62,8 @@ function App() {
 										</header>
 										<main>
 											<Route exact path='/' component={Home} />
-											{/* <Route exact path='/cards' component={Cards} /> */}
 											<Route path='/library/' component={Library} />
+											<Route path='/deck-gallery' component={DeckGallery} />
 											<Route path='/decks' component={Decks} />
 											<Route path='/decks/white-deck' component={WhiteDeck} />
 											<Route path='/decks/blue-deck' component={BlueDeck} />

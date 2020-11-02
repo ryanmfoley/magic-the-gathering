@@ -10,18 +10,25 @@
 	height: 20px;
 	background-color: rgb(14, 104, 171);
 }
+
 .B {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(21, 11, 0);
 }
+
 .R {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(211, 32, 42);
 }
+
 .G {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(0, 115, 62);
+}
+
+input {
+	display: block;
 }

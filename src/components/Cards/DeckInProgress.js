@@ -22,10 +22,6 @@ const DeckInProgress = () => {
 
 	const handleClose = () => setShow(false)
 
-	const handleSave = () => {
-		// localStorage.setItem()
-	}
-
 	const saveDeckLocally = (event) => {
 		event.preventDefault()
 
@@ -33,8 +29,10 @@ const DeckInProgress = () => {
 		const deckContents = JSON.stringify(deckInProgress)
 
 		localStorage.setItem(deckName, deckContents)
-		let blah = localStorage.getItem(deckName)
-		console.log(JSON.parse(blah))
+
+		// let blah = localStorage.getItem(deckName)
+		// console.log(Object.values(localStorage))
+		handleClose()
 	}
 
 	if (!deckInProgress.length) {
@@ -59,7 +57,7 @@ const DeckInProgress = () => {
 								<tr key={card.id}>
 									<td>{index + 1}</td>
 									<td>
-										<div className={card.color.slice(-2, -1)}></div>
+										<div Name={card.color.slice(-2, -1)}></div>
 									</td>
 									<td>{card.name}</td>
 									<td>{card.type}</td>
@@ -83,19 +81,18 @@ const DeckInProgress = () => {
 					</Modal.Header>
 					<Modal.Body>
 						<form onSubmit={saveDeckLocally}>
+							<small>
+								After saving, your deck will be available in the Deck Gallery.
+							</small>
 							<input type='text' id='deck-name'></input>
 							<Button
-								variant='primary'
+								variant='secondary'
 								type='button'
 								onClick={handleClose}
 								size='sm'>
 								Cancel
 							</Button>
-							<Button
-								variant='secondary'
-								type='submit'
-								onClick={handleSave}
-								size='sm'>
+							<Button variant='primary' type='submit' size='sm'>
 								Save
 							</Button>
 						</form>
