@@ -15,7 +15,6 @@ const DeckInProgress = () => {
 
 	const clearDeck = () => setDeckInProgress([])
 
-	// Function that opens a Modal with an input for setting deck name
 	const saveDeck = () => {
 		setShow(true)
 	}
@@ -30,8 +29,6 @@ const DeckInProgress = () => {
 
 		localStorage.setItem(deckName, deckContents)
 
-		// let blah = localStorage.getItem(deckName)
-		// console.log(Object.values(localStorage))
 		handleClose()
 	}
 

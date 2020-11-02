@@ -14,9 +14,7 @@ const CardList = ({ cards, type }) => {
 
 	const handleShow = (event) => {
 		setShow(true)
-		// let cardObj = { ...event.target.dataset }
 		setSelectedCard({ ...event.target.dataset })
-		// setSelectedCard({ ...cardObj })
 	}
 
 	const handleClose = () => setShow(false)

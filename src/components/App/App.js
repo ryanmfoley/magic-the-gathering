@@ -23,7 +23,6 @@ function App() {
 		instants: {},
 	}
 
-	const [selectedCard, setSelectedCard] = useState(null)
 	const [deckInProgress, setDeckInProgress] = useState([])
 
 	return (
