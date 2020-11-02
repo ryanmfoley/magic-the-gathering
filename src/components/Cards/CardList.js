@@ -4,9 +4,7 @@ import Modal from 'react-bootstrap/Modal'
 
 import DeckInProgressContext from './DeckInProgressContext'
 
-const CardList = ({ cards, color, type }) => {
-	// <Modal wouldn't run because can't read property of null when it's looking at selectedCard.name, so I initially set it to {}, which is undefined at first
-	// I may not need color
+const CardList = ({ cards, type }) => {
 	const [show, setShow] = useState(false)
 	const [selectedCard, setSelectedCard] = useState({})
 
@@ -35,7 +33,7 @@ const CardList = ({ cards, color, type }) => {
 		}
 		handleClose()
 	}
-
+	cards.forEach((card) => console.log(card.mana_cost))
 	if (!cards) {
 		return <h2>Loading...</h2>
 	} else {
@@ -52,7 +50,6 @@ const CardList = ({ cards, color, type }) => {
 									alt='Magic The Gathering Card'
 									role='button'
 									data-id={card.id}
-									// data-color={color}
 									data-color={card.mana_cost}
 									data-name={card.name}
 									data-type={card.type_line}
@@ -64,19 +61,26 @@ const CardList = ({ cards, color, type }) => {
 						}
 					})}
 				</div>
-				<Modal show={show} onHide={handleClose}>
+				<Modal show={show} onHide={handleClose} size='sm' closeButton>
 					<Modal.Header closeButton>
-						<Modal.Title>Add card to {color} deck?</Modal.Title>
+						<Modal.Title>Add card to deck?</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
 						<img src={selectedCard.image} alt='Magic The Gathering Card' />
 					</Modal.Body>
 					<Modal.Footer>
+						<label htmlFor='cards'>Number of copies</label>
+						<select name='cards'>
+							<option value='1'>1</option>
+							<option value='2'>2</option>
+							<option value='3'>3</option>
+							<option value='4'>4</option>
+						</select>
+						<Button variant='primary' type='button' onClick={handleSave}>
+							Add card
+						</Button>
 						<Button variant='secondary' type='button' onClick={handleClose}>
 							Close
-						</Button>
-						<Button variant='primary' type='button' onClick={handleSave}>
-							Add card to deck
 						</Button>
 					</Modal.Footer>
 				</Modal>

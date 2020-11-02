@@ -11,10 +11,6 @@ table {
 	margin-top: 60px;
 }
 
-.btn-primary {
-	background-color: #1a6e97 !important;
-}
-
 .card-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -59,5 +55,10 @@ img {
 }
 
 .modal-content {
-	background-color: rgb(170, 170, 170) !important;
+	background-color: rgb(216, 216, 216) !important;
+}
+
+.modal-body > img {
+	justify-content: flex-end !important;
+	/* text-align: center !important; */
 }

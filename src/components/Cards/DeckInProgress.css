@@ -1,26 +1,26 @@
-.white {
+.W {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(249, 250, 244);
 	border: 1px solid gray;
 }
 
-.blue {
+.U {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(14, 104, 171);
 }
-.black {
+.B {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(21, 11, 0);
 }
-.red {
+.R {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(211, 32, 42);
 }
-.green {
+.G {
 	width: 20px;
 	height: 20px;
 	background-color: rgb(0, 115, 62);
