@@ -1,14 +1,7 @@
 import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
 
-import SelectedCardContext from '../Cards/SelectedCardContext'
 import DeckInProgressContext from '../Cards/DeckInProgressContext'
-import WhiteDeckContext from '../Decks/WhiteDeck/WhiteDeckContext'
-import BlueDeckContext from '../Decks/BlueDeck/BlueDeckContext'
-import BlackDeckContext from '../Decks/BlackDeck/BlackDeckContext'
-import RedDeckContext from '../Decks/RedDeck/RedDeckContext'
-import GreenDeckContext from '../Decks/GreenDeck/GreenDeckContext'
-
 import Header from '../Header/Header'
 import Home from '../Home/Home'
 import '../Home/Home.css'
@@ -23,13 +16,6 @@ import GreenDeck from '../Decks/GreenDeck/GreenDeck'
 import './App.scss'
 
 function App() {
-	// NOTES
-	// Card database that allows user to click on card to maximize view
-	// BuildDeck, built deck overwrites deck gallery for that color, save button
-	// DeckGallery, carousel to view cards
-
-	// FIX CARDFILTER WHEN WINDOW IS SMALL
-
 	const deck = {
 		mana: null,
 		creatures: {},
@@ -39,45 +25,22 @@ function App() {
 
 	const [selectedCard, setSelectedCard] = useState(null)
 	const [deckInProgress, setDeckInProgress] = useState([])
-	// const [deckInProgress, setDeckInProgress] = useState([])
-	const [whiteDeck, setWhiteDeck] = useState(deck)
-	const [blueDeck, setBlueDeck] = useState(deck)
-	const [blackDeck, setBlackDeck] = useState(deck)
-	const [redDeck, setRedDeck] = useState(deck)
-	const [greenDeck, setGreenDeck] = useState(deck)
 
 	return (
 		<div className='App'>
-			<WhiteDeckContext.Provider value={{ whiteDeck, setWhiteDeck }}>
-				<BlueDeckContext.Provider value={{ blueDeck, setBlueDeck }}>
-					<BlackDeckContext.Provider value={{ blackDeck, setBlackDeck }}>
-						<RedDeckContext.Provider value={{ redDeck, setRedDeck }}>
-							<GreenDeckContext.Provider value={{ greenDeck, setGreenDeck }}>
-								<DeckInProgressContext.Provider
-									value={{ deckInProgress, setDeckInProgress }}>
-									<SelectedCardContext.Provider
-										value={{ selectedCard, setSelectedCard }}>
-										<header>
-											<Header />
-										</header>
-										<main>
-											<Route exact path='/' component={Home} />
-											<Route path='/library/' component={Library} />
-											<Route path='/deck-gallery' component={DeckGallery} />
-											<Route path='/decks' component={Decks} />
-											<Route path='/decks/white-deck' component={WhiteDeck} />
-											<Route path='/decks/blue-deck' component={BlueDeck} />
-											<Route path='/decks/black-deck' component={BlackDeck} />
-											<Route path='/decks/red-deck' component={BuildRedDeck} />
-											<Route path='/decks/green-deck' component={GreenDeck} />
-										</main>
-									</SelectedCardContext.Provider>
-								</DeckInProgressContext.Provider>
-							</GreenDeckContext.Provider>
-						</RedDeckContext.Provider>
-					</BlackDeckContext.Provider>
-				</BlueDeckContext.Provider>
-			</WhiteDeckContext.Provider>
+			<DeckInProgressContext.Provider
+				value={{ deckInProgress, setDeckInProgress }}>
+				<header>
+					<Header />
+				</header>
+				<main>
+					<Route exact path='/' component={Home} />
+					<Route path='/library/' component={Library} />
+					<Route path='/deck-gallery' component={DeckGallery} />
+					<Route path='/decks' component={Decks} />
+					<Route path='/decks/red-deck' component={BuildRedDeck} />
+				</main>
+			</DeckInProgressContext.Provider>
 		</div>
 	)
 }
