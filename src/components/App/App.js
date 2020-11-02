@@ -38,7 +38,11 @@ function App() {
 					<Route path='/library/' component={Library} />
 					<Route path='/deck-gallery' component={DeckGallery} />
 					<Route path='/decks' component={Decks} />
+					<Route path='/decks/white-deck' component={WhiteDeck} />
+					<Route path='/decks/blue-deck' component={BlueDeck} />
+					<Route path='/decks/black-deck' component={BlackDeck} />
 					<Route path='/decks/red-deck' component={BuildRedDeck} />
+					<Route path='/decks/green-deck' component={GreenDeck} />
 				</main>
 			</DeckInProgressContext.Provider>
 		</div>
