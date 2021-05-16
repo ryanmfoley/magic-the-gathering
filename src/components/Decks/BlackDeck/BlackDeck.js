@@ -1,11 +1,7 @@
 import React from 'react'
 
-const BlackDeck = () => {
-	return (
-		<div>
-			<h1>Black Deck coming soon</h1>
-		</div>
-	)
-}
+const BlackDeck = () => (
+	<h1 className='decks-header mt-5 text-center'>Black Deck coming soon!</h1>
+)
 
 export default BlackDeck

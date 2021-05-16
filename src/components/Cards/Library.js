@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
+import { Button, Modal } from 'react-bootstrap'
 import axios from 'axios'
 
 import DeckInProgress from './DeckInProgress'
@@ -59,7 +58,7 @@ const Library = () => {
 	const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
 	return (
-		<div className='library'>
+		<>
 			<form className='card-filter' onSubmit={handleSubmit}>
 				<select id='color'>
 					<option hidden=''>Color</option>
@@ -124,7 +123,7 @@ const Library = () => {
 						</li>
 					</ol>
 				</Modal.Body>
-				<Modal.Footer>
+				<Modal.Footer className='justify-content-center'>
 					<Button
 						className='btn-primary'
 						variant='primary'
@@ -134,7 +133,7 @@ const Library = () => {
 					</Button>
 				</Modal.Footer>
 			</Modal>
-		</div>
+		</>
 	)
 }
 

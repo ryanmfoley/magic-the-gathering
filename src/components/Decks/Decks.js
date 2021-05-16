@@ -1,30 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import '../Decks/Decks.css'
 import ManaImage from './mtg-bg.png'
+import '../Decks/Decks.css'
 
-const Decks = () => {
-	return (
-		<div className='decks'>
-			<img src={ManaImage} alt='Mana symbols' />
-			<Link to='/decks/white-deck'>
-				<div className='plains'></div>
-			</Link>
-			<Link to='/decks/blue-deck'>
-				<div className='island'></div>
-			</Link>
-			<Link to='/decks/black-deck'>
-				<div className='swamp'></div>
-			</Link>
-			<Link to='/decks/red-deck'>
-				<div className='mountain'></div>
-			</Link>
-			<Link to='/decks/green-deck'>
-				<div className='forest'></div>
-			</Link>
-		</div>
-	)
-}
+const Decks = () => (
+	<div className='position-relative'>
+		<img className='w-100 h-auto' src={ManaImage} alt='Mana symbols' />
+		<Link to='/white-deck'>
+			<div className='plains'></div>
+		</Link>
+		<Link to='/blue-deck'>
+			<div className='island'></div>
+		</Link>
+		<Link to='/black-deck'>
+			<div className='swamp'></div>
+		</Link>
+		<Link to='/red-deck'>
+			<div className='mountain'></div>
+		</Link>
+		<Link to='/green-deck'>
+			<div className='forest'></div>
+		</Link>
+	</div>
+)
 
 export default Decks

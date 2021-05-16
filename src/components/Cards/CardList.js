@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
+import { Button, Modal } from 'react-bootstrap'
 
 import DeckInProgressContext from './DeckInProgressContext'
 
@@ -68,28 +67,36 @@ const CardList = ({ cards, type }) => {
 					<Modal.Header closeButton>
 						<Modal.Title>Add card to deck?</Modal.Title>
 					</Modal.Header>
-					<Modal.Body>
+					<Modal.Body className='d-flex justify-content-center'>
 						<img src={selectedCard.image} alt='Magic The Gathering Card' />
 					</Modal.Body>
 					<Modal.Footer>
-						<form onSubmit={handleSave}>
-							<label htmlFor='cards'>Copies:</label>
-							<select name='cards' id='copies'>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
-								<option value='3'>3</option>
-								<option value='4'>4</option>
-							</select>
-							<Button
-								type='button'
-								variant='secondary'
-								onClick={handleClose}
-								size='sm'>
-								Close
-							</Button>
-							<Button type='submit' variant='primary' size='sm'>
-								Add card
-							</Button>
+						<form
+							className='d-flex justify-content-between w-100'
+							onSubmit={handleSave}>
+							<div className='copies-input'>
+								<label htmlFor='cards'>
+									<strong>Copies:</strong>
+								</label>
+								<select id='copies' name='cards'>
+									<option value='1'>1</option>
+									<option value='2'>2</option>
+									<option value='3'>3</option>
+									<option value='4'>4</option>
+								</select>
+							</div>
+							<div className='form-buttons'>
+								<Button
+									type='button'
+									variant='secondary'
+									onClick={handleClose}
+									size='sm'>
+									Close
+								</Button>
+								<Button type='submit' variant='primary' size='sm'>
+									Add card
+								</Button>
+							</div>
 						</form>
 					</Modal.Footer>
 				</Modal>

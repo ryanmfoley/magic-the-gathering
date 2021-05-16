@@ -1,11 +1,7 @@
 import React from 'react'
 
-const RedDeck = () => {
-	return (
-		<div>
-			<h1>red deck in construction</h1>
-		</div>
-	)
-}
+const RedDeck = () => (
+	<h1 className='decks-header mt-5 text-center'>Red Deck coming soon!</h1>
+)
 
 export default RedDeck

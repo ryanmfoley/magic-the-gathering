@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react'
-import Button from 'react-bootstrap/Button'
-import Modal from 'react-bootstrap/Modal'
-import Table from 'react-bootstrap/Table'
+import { Button, Modal, Table } from 'react-bootstrap'
 
 import DeckInProgressContext from './DeckInProgressContext'
 import './DeckInProgress.css'
@@ -36,8 +34,8 @@ const DeckInProgress = () => {
 		return <></>
 	} else {
 		return (
-			<div className='container'>
-				<Table size='sm' responsive>
+			<div className='deck-in-progress mx-auto'>
+				<Table className='m-0' size='sm' responsive>
 					<thead>
 						<tr>
 							<th>#</th>
@@ -49,20 +47,18 @@ const DeckInProgress = () => {
 						</tr>
 					</thead>
 					<tbody>
-						{deckInProgress.map((card, index) => {
-							return (
-								<tr key={card.id}>
-									<td>{index + 1}</td>
-									<td>
-										<div Name={card.color.slice(-2, -1)}></div>
-									</td>
-									<td>{card.name}</td>
-									<td>{card.type}</td>
-									<td>{card.mana}</td>
-									<td>{card.copies}</td>
-								</tr>
-							)
-						})}
+						{deckInProgress.map((card, index) => (
+							<tr key={card.id}>
+								<td>{index + 1}</td>
+								<td>
+									<div className={card.color.slice(-2, -1)}></div>
+								</td>
+								<td>{card.name}</td>
+								<td>{card.type}</td>
+								<td>{card.mana}</td>
+								<td>{card.copies}</td>
+							</tr>
+						))}
 					</tbody>
 				</Table>
 				<Button variant='outline-danger' size='sm' onClick={clearDeck} block>
@@ -81,7 +77,7 @@ const DeckInProgress = () => {
 							<small>
 								After saving, your deck will be available in the Deck Gallery.
 							</small>
-							<input type='text' id='deck-name'></input>
+							<input id='deck-name' className='d-block' type='text'></input>
 							<Button
 								variant='secondary'
 								type='button'

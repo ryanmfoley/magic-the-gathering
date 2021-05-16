@@ -1,9 +1,9 @@
 import React from 'react'
-
-import Pagination from 'react-bootstrap/Pagination'
+import { Pagination } from 'react-bootstrap'
 
 const Paginate = ({ cardsPerPage, totalCards, currentPage, paginate }) => {
 	const items = []
+
 	for (
 		let number = 1;
 		number <= Math.ceil(totalCards / cardsPerPage);
@@ -19,11 +19,7 @@ const Paginate = ({ cardsPerPage, totalCards, currentPage, paginate }) => {
 		)
 	}
 
-	return (
-		<div>
-			<Pagination>{items}</Pagination>
-		</div>
-	)
+	return <Pagination>{items}</Pagination>
 }
 
 export default Paginate

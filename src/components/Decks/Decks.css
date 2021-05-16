@@ -1,12 +1,3 @@
-.decks {
-	position: relative;
-}
-
-.decks img {
-	width: 100%;
-	height: auto;
-}
-
 .plains {
 	position: absolute;
 	left: 50%;
@@ -15,7 +6,6 @@
 	height: 21%;
 	z-index: 1;
 	transform: translate(-50%, -50%);
-	/* border: 2px solid white; */
 }
 
 .island {
@@ -26,7 +16,6 @@
 	height: 21%;
 	z-index: 1;
 	transform: translate(-50%, -50%);
-	/* border: 2px solid blue; */
 }
 
 .swamp {
@@ -37,7 +26,6 @@
 	height: 21.5%;
 	z-index: 1;
 	transform: translate(-50%, -50%);
-	/* border: 2px solid black; */
 }
 
 .mountain {
@@ -48,7 +36,6 @@
 	height: 21.5%;
 	z-index: 1;
 	transform: translate(-50%, -50%);
-	/* border: 2px solid red; */
 }
 
 .forest {
@@ -59,5 +46,4 @@
 	height: 21%;
 	z-index: 1;
 	transform: translate(-50%, -50%);
-	/* border: 2px solid green; */
 }

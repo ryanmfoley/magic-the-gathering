@@ -1,11 +1,7 @@
 import React from 'react'
 
-const WhiteDeck = () => {
-	return (
-		<div>
-			<h1>White Deck coming soon</h1>
-		</div>
-	)
-}
+const WhiteDeck = () => (
+	<h1 className='decks-header mt-5 text-center'>White Deck coming soon!</h1>
+)
 
 export default WhiteDeck

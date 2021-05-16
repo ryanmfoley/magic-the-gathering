@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
 
 import DeckInProgressContext from '../Cards/DeckInProgressContext'
-import Header from '../Header/Header'
-import Home from '../Home/Home'
-import '../Home/Home.css'
+import Navigation from '../Navigation/Navigation'
 import Library from '../Cards/Library'
 import Decks from '../Decks/Decks'
 import DeckGallery from '../Decks/DeckGallery'
@@ -16,32 +14,25 @@ import GreenDeck from '../Decks/GreenDeck/GreenDeck'
 import './App.scss'
 
 function App() {
-	const deck = {
-		mana: null,
-		creatures: {},
-		sorceries: {},
-		instants: {},
-	}
-
 	const [deckInProgress, setDeckInProgress] = useState([])
 
 	return (
-		<div className='App'>
+		<div className='pt-5'>
 			<DeckInProgressContext.Provider
 				value={{ deckInProgress, setDeckInProgress }}>
 				<header>
-					<Header />
+					<Navigation />
 				</header>
 				<main>
-					<Route exact path='/' component={Home} />
-					<Route path='/library/' component={Library} />
+					<Route exact path='/' component={Decks} />
+					<Route path='/library' component={Library} />
 					<Route path='/deck-gallery' component={DeckGallery} />
-					<Route path='/decks' component={Decks} />
-					<Route path='/decks/white-deck' component={WhiteDeck} />
-					<Route path='/decks/blue-deck' component={BlueDeck} />
-					<Route path='/decks/black-deck' component={BlackDeck} />
-					<Route path='/decks/red-deck' component={RedDeck} />
-					<Route path='/decks/green-deck' component={GreenDeck} />
+
+					<Route path='/white-deck' component={WhiteDeck} />
+					<Route path='/blue-deck' component={BlueDeck} />
+					<Route path='/black-deck' component={BlackDeck} />
+					<Route path='/red-deck' component={RedDeck} />
+					<Route path='/green-deck' component={GreenDeck} />
 				</main>
 			</DeckInProgressContext.Provider>
 		</div>

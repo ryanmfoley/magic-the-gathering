@@ -1,34 +1,39 @@
+.deck-in-progress {
+	width: min(50%, 900px) !important;
+	margin-top: 100px;
+	padding: 30px;
+	border: 1px solid rgba(52, 52, 52, 0.618);
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.659);
+}
+
 .W {
 	width: 20px;
 	height: 20px;
-	background-color: rgb(249, 250, 244);
+	background: rgb(249, 250, 244);
 	border: 1px solid gray;
 }
 
 .U {
 	width: 20px;
 	height: 20px;
-	background-color: rgb(14, 104, 171);
+	background: rgb(14, 104, 171);
 }
 
 .B {
 	width: 20px;
 	height: 20px;
-	background-color: rgb(21, 11, 0);
+	background: rgb(21, 11, 0);
 }
 
 .R {
 	width: 20px;
 	height: 20px;
-	background-color: rgb(211, 32, 42);
+	background: rgb(211, 32, 42);
 }
 
 .G {
 	width: 20px;
 	height: 20px;
-	background-color: rgb(0, 115, 62);
-}
-
-input {
-	display: block;
+	background: rgb(0, 115, 62);
 }
