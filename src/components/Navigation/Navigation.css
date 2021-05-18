@@ -1,8 +1,12 @@
-.mtg-brand {
-	width: 50px;
-	height: auto;
+.navbar {
+	height: 7vw;
 }
 
-/* .navbar {
-	font-size: 1.5em !important;
-} */
+.mtg-brand {
+	width: 3.5vw;
+	margin-left: 2vw;
+}
+
+.nav-link {
+	font-size: 2vw;
+}

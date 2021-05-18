@@ -17,7 +17,7 @@ function App() {
 	const [deckInProgress, setDeckInProgress] = useState([])
 
 	return (
-		<div className='pt-5'>
+		<>
 			<DeckInProgressContext.Provider
 				value={{ deckInProgress, setDeckInProgress }}>
 				<header>
@@ -35,7 +35,7 @@ function App() {
 					<Route path='/green-deck' component={GreenDeck} />
 				</main>
 			</DeckInProgressContext.Provider>
-		</div>
+		</>
 	)
 }
 

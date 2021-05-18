@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Form, Modal } from 'react-bootstrap'
 import axios from 'axios'
 
 import DeckInProgress from './DeckInProgress'
@@ -59,24 +59,24 @@ const Library = () => {
 
 	return (
 		<>
-			<form className='card-filter' onSubmit={handleSubmit}>
-				<select id='color'>
+			<Form className='d-flex' onSubmit={handleSubmit}>
+				<Form.Control as='select' id='color' size='sm'>
 					<option hidden=''>Color</option>
 					<option>White</option>
 					<option>Blue</option>
 					<option>Black</option>
 					<option>Red</option>
 					<option>Green</option>
-				</select>
-				<select id='type'>
+				</Form.Control>
+				<Form.Control as='select' id='type' size='sm'>
 					<option hidden=''>Card Type</option>
 					<option>Creature</option>
 					<option>Sorcery</option>
 					<option>Instant</option>
 					<option>Enchantment</option>
 					<option>Artifact</option>
-				</select>
-				<select id='mana'>
+				</Form.Control>
+				<Form.Control as='select' id='mana' size='sm'>
 					<option hidden=''>Converted Mana Cost</option>
 					<option>1</option>
 					<option>2</option>
@@ -85,7 +85,7 @@ const Library = () => {
 					<option>5</option>
 					<option>6</option>
 					<option>7</option>
-				</select>
+				</Form.Control>
 				<Button
 					className='btn-primary'
 					variant='primary'
@@ -94,7 +94,7 @@ const Library = () => {
 					block>
 					Search Cards
 				</Button>
-			</form>
+			</Form>
 			<DeckInProgress />
 			<Paginate
 				cardsPerPage={cardsPerPage}

@@ -1,5 +1,5 @@
 $theme-colors: (
-	'primary': #1a6e97,
+	'primary': rgb(19, 72, 118),
 );
 
 @import '~bootstrap/scss/bootstrap.scss';
@@ -11,8 +11,3 @@ $theme-colors: (
 html {
 	scroll-behavior: smooth;
 }
-
-// body {
-// 	background: white;
-// 	padding-top: 75px;
-// }

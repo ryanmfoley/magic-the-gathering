@@ -19,7 +19,7 @@ const Paginate = ({ cardsPerPage, totalCards, currentPage, paginate }) => {
 		)
 	}
 
-	return <Pagination>{items}</Pagination>
+	return <Pagination className='mt-3'>{items}</Pagination>
 }
 
 export default Paginate

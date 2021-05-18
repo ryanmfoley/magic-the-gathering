@@ -5,8 +5,8 @@ import MtgBrand from './mtg-brand.png'
 import './Navigation.css'
 
 const Navigation = () => (
-	<Navbar bg='dark' variant='dark' fixed='top'>
-		<Navbar.Brand className='ml-5' href='/'>
+	<Navbar bg='dark' variant='dark'>
+		<Navbar.Brand href='/'>
 			<img
 				className='mtg-brand'
 				src={MtgBrand}

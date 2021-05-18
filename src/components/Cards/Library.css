@@ -1,12 +1,3 @@
-.card-filter {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	width: 100%;
-	top: 75px;
-	position: fixed;
-	z-index: 2;
-}
-
 table {
 	margin-top: 60px;
 }
@@ -27,13 +18,11 @@ img {
 
 .pagination {
 	justify-content: flex-end;
-	margin-top: 50px;
 	padding-right: 40px;
 }
 
 .active .page-link {
 	z-index: 1 !important;
-	background: #1a6e97 !important;
 }
 
 .page-link:hover {
@@ -45,10 +34,6 @@ img {
 .pagination > li > span:focus,
 .pagination > li > span:hover {
 	border-color: red !important;
-}
-
-.pagination > li > a {
-	color: #1a6e97 !important;
 }
 
 .modal-dialog {

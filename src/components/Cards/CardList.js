@@ -39,7 +39,7 @@ const CardList = ({ cards, type }) => {
 		return <></>
 	} else {
 		return (
-			<div>
+			<>
 				<div className='card-list'>
 					{cards.map((card) => {
 						if (card.image_uris) {
@@ -100,7 +100,7 @@ const CardList = ({ cards, type }) => {
 						</form>
 					</Modal.Footer>
 				</Modal>
-			</div>
+			</>
 		)
 	}
 }
