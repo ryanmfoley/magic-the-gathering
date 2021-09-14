@@ -4,7 +4,6 @@
 	top: 27%;
 	width: 12%;
 	height: 21%;
-	z-index: 1;
 	transform: translate(-50%, -50%);
 }
 
@@ -14,7 +13,6 @@
 	top: 43.5%;
 	width: 12%;
 	height: 21%;
-	z-index: 1;
 	transform: translate(-50%, -50%);
 }
 
@@ -24,7 +22,6 @@
 	bottom: 6.5%;
 	width: 12%;
 	height: 21.5%;
-	z-index: 1;
 	transform: translate(-50%, -50%);
 }
 
@@ -34,7 +31,6 @@
 	bottom: 6.5%;
 	width: 12%;
 	height: 21.5%;
-	z-index: 1;
 	transform: translate(-50%, -50%);
 }
 
@@ -44,6 +40,5 @@
 	top: 44%;
 	width: 12%;
 	height: 21%;
-	z-index: 1;
 	transform: translate(-50%, -50%);
 }

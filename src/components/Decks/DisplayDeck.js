@@ -1,24 +1,16 @@
-import React from 'react'
-
-const DisplayDeck = ({ cards }) => {
-	if (cards) {
-		return (
-			<div className='card-list'>
-				{cards.map((card) => {
-					if (card.image)
-						return (
-							<img
-								key={card.id}
-								src={card.image}
-								alt='Magic The Gathering Card'
-							/>
-						)
-				})}
-			</div>
-		)
-	} else {
-		return <></>
-	}
-}
+const DisplayDeck = ({ cards }) =>
+	cards ? (
+		<div className='card-list'>
+			{cards.map((card) =>
+				card.image ? (
+					<img key={card.id} src={card.image} alt='Magic The Gathering Card' />
+				) : (
+					<></>
+				)
+			)}
+		</div>
+	) : (
+		<></>
+	)
 
 export default DisplayDeck
