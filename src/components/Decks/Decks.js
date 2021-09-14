@@ -1,8 +1,7 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 import ManaImage from './mtg-bg.png'
-import '../Decks/Decks.css'
+import './Decks.css'
 
 const Decks = () => (
 	<div className='position-relative'>

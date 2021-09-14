@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import  { useContext, useEffect } from 'react'
 
 import RedDeckContext from './RedDeckContext'
 
@@ -72,7 +72,7 @@ const FetchCards = ({ cardIds }) => {
 		addInstantCards().then((res) => {
 			setRedDeck((cards) => ({ ...cards, instants: res.flat() }))
 		})
-	}, [])
+	}, [cardIds, setRedDeck])
 
 	return <RedDeck />
 }

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const GreenDeck = () => (
 	<h1 className='decks-header mt-5 text-center'>Green Deck coming soon!</h1>
 )

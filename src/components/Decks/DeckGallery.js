@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Container, ListGroup } from 'react-bootstrap'
 
 import DisplayDeck from './DisplayDeck'
